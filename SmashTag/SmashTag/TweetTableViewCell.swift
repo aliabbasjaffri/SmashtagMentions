@@ -16,6 +16,8 @@ class TweetTableViewCell: UITableViewCell
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var tweeterImage: UIImageView!
     
+    var colors = [UIColor.brownColor() , UIColor.blueColor(), UIColor.cyanColor(), UIColor.redColor(), UIColor.darkGrayColor(), UIColor.greenColor(), UIColor.orangeColor(), UIColor.magentaColor()]
+    
     var tweet : Twitter.Tweet?
     {
         didSet
@@ -35,9 +37,29 @@ class TweetTableViewCell: UITableViewCell
         // load new information from our tweet (if any)
         if let tweet = self.tweet
         {
+            let tweetString = tweet.text as NSString
+            
             tweetText?.text = tweet.text
-            if tweetText?.text != nil  {
-                for _ in tweet.media {
+            
+            if tweetText?.text != nil
+            {
+                if (tweetString.containsString("#") || tweetString.containsString("@"))
+                {
+                    let attributedString = NSMutableAttributedString(string: tweet.text)
+                    
+                    let hashtags:[String] =  tweetString.componentsSeparatedByString(" ").filter({ $0.containsString("#") || $0.containsString("@") })
+                    
+                    for word in hashtags
+                    {
+                        let range = tweetString.rangeOfString(word)
+                        let randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
+                        attributedString.addAttribute(NSForegroundColorAttributeName, value: colors[randomIndex], range: range)
+                    }
+                    tweetText.attributedText = attributedString
+                }
+                
+                for _ in tweet.media
+                {
                     tweetText.text! += " 📷"
                 }
             }
