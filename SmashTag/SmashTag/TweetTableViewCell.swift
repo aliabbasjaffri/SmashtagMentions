@@ -44,9 +44,25 @@ class TweetTableViewCell: UITableViewCell
             
             tweeter?.text = "\(tweet.user)" // tweet.user.description
             
-            if let profileImageURL = tweet.user.profileImageURL {
-                if let imageData = NSData(contentsOfURL: profileImageURL) { // blocks main thread!
-                    tweeterImage?.image = UIImage(data: imageData)
+            if let profileImageURL = tweet.user.profileImageURL
+            {
+                let url = profileImageURL
+                
+                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
+                {
+                    let contentsOfURL = NSData(contentsOfURL: url)
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        if url == profileImageURL
+                        {
+                            if let imageData = contentsOfURL
+                            {
+                                self.tweeterImage?.image = UIImage(data: imageData)
+                            }
+                        }
+                    }
+                
                 }
             }
             
