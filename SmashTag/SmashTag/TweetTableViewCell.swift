@@ -16,7 +16,7 @@ class TweetTableViewCell: UITableViewCell
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var tweeterImage: UIImageView!
     
-    var colors = [UIColor.brownColor() , UIColor.blueColor(), UIColor.cyanColor(), UIColor.redColor(), UIColor.darkGrayColor(), UIColor.greenColor(), UIColor.orangeColor(), UIColor.magentaColor()]
+    var colors = [UIColor.brownColor() , UIColor.blueColor(), UIColor.redColor(), UIColor.darkGrayColor(), UIColor.purpleColor() , UIColor.orangeColor(), UIColor.magentaColor()]
     
     var tweet : Twitter.Tweet?
     {

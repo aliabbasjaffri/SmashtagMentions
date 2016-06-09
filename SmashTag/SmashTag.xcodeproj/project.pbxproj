@@ -14,6 +14,7 @@
 		5D03BF0B1CFB597D00338143 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */; };
 		5D25A31A1D020E18004A084D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D25A3191D020E18004A084D /* Twitter.framework */; };
 		5DBC6A431CFCBBB2002D02BF /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */; };
+		5DF51C0D1D09F2ED003B76BD /* TweetDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF51C0C1D09F2ED003B76BD /* TweetDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		5D25A3191D020E18004A084D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SmashTagMentions-gnbervbaqzlgraeewmcgvnmqjgav/Build/Products/Debug-iphoneos/Twitter.framework"; sourceTree = "<group>"; };
 		5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		5DF51C0C1D09F2ED003B76BD /* TweetDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				5D03BEFB1CFB58FA00338143 /* Main.storyboard */,
 				5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */,
 				5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */,
+				5DF51C0C1D09F2ED003B76BD /* TweetDetailTableViewController.swift */,
 			);
 			path = SmashTag;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				5D03BEF81CFB58FA00338143 /* AppDelegate.swift in Sources */,
 				5D03BF0B1CFB597D00338143 /* TweetTableViewController.swift in Sources */,
+				5DF51C0D1D09F2ED003B76BD /* TweetDetailTableViewController.swift in Sources */,
 				5DBC6A431CFCBBB2002D02BF /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
