@@ -62,6 +62,11 @@ class TweetTableViewCell: UITableViewCell
                 {
                     tweetText.text! += " 📷"
                 }
+                
+                for _ in tweet.urls
+                {
+                    tweetText.text! += "@@URL@@"
+                }
             }
             
             tweeter?.text = "\(tweet.user)" // tweet.user.description

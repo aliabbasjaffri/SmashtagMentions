@@ -7,14 +7,71 @@
 //
 
 import UIKit
+import Twitter
 
 class TweetDetailTableViewController: UITableViewController
 {
+    @IBOutlet weak var tweetImageView: UIImageView!
+    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var tweetUserLabel: UILabel!
+    @IBOutlet weak var tweetHashtagsLabel: UILabel!
+    @IBOutlet weak var tweetLinkLabel: UILabel!
     
     
+    var tweet : Twitter.Tweet?
+    
+    private func updateUI()
+    {
+        if let tweest = self.tweet
+        {
+            for _ in tweest.media
+            {
+                updateImage(tweest)
+            }
+            
+            tweetTextLabel?.text = tweest.text
+            tweetUserLabel?.text = tweest.user.screenName
+            
+            var tags : String = ""
+    
+            for var hashtag in tweest.hashtags
+            {
+                tags += hashtag.keyword + " , "
+            }
+            
+            tweetHashtagsLabel?.text = tags
+            tweetLinkLabel?.text = tweest.urls[0].keyword
+        }
+    }
+    
+    private func updateImage( tweet: Twitter.Tweet )
+    {
+        let profileImageURL = tweet.media[0].url
+        do {
+            let url = profileImageURL
+            
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
+            {
+                let contentsOfURL = NSData(contentsOfURL: url)
+                
+                dispatch_async(dispatch_get_main_queue())
+                {
+                    if url == profileImageURL
+                    {
+                        if let imageData = contentsOfURL
+                        {
+                            self.tweetImageView?.image = UIImage(data: imageData)
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +89,7 @@ class TweetDetailTableViewController: UITableViewController
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

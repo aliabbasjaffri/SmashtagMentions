@@ -81,7 +81,7 @@
                                     <outlet property="tweetText" destination="P1p-nq-x1q" id="HiH-hC-Ewr"/>
                                     <outlet property="tweeter" destination="e6s-x9-nDW" id="F1d-WR-YtU"/>
                                     <outlet property="tweeterImage" destination="snM-sf-v7z" id="4Xl-6B-Dpu"/>
-                                    <segue destination="Y2t-3m-3w9" kind="show" id="EXL-2o-Wsh"/>
+                                    <segue destination="Y2t-3m-3w9" kind="show" identifier="tweetDetailViewSegue" id="EXL-2o-Wsh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJc-3T-BNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="265"/>
+            <point key="canvasLocation" x="1068" y="265"/>
         </scene>
         <!--Tweet Detail Table View Controller-->
         <scene sceneID="da7-pr-8tR">
@@ -154,7 +154,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-9B-Dxi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-9B-Dxi">
                                                     <rect key="frame" x="8" y="21" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,7 +179,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-hX-HTe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-hX-HTe">
                                                     <rect key="frame" x="8" y="21" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,7 +204,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myz-R2-Z14">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myz-R2-Z14">
                                                     <rect key="frame" x="8" y="21" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,16 +220,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Section-5" id="ssQ-4w-tmN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="6Gb-gq-J7J">
+                                        <rect key="frame" x="0.0" y="596" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Gb-gq-J7J" id="DQ2-mw-2m9">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Links" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-1j-bdn">
+                                                    <rect key="frame" x="8" y="21" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6PE-1j-bdn" firstAttribute="trailing" secondItem="DQ2-mw-2m9" secondAttribute="trailingMargin" id="7E8-ZA-KSa"/>
+                                                <constraint firstItem="6PE-1j-bdn" firstAttribute="centerY" secondItem="DQ2-mw-2m9" secondAttribute="centerY" id="gQp-ac-OcU"/>
+                                                <constraint firstItem="6PE-1j-bdn" firstAttribute="leading" secondItem="DQ2-mw-2m9" secondAttribute="leadingMargin" id="mqp-JF-eym"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Y2t-3m-3w9" id="Q1c-NV-jdq"/>
                             <outlet property="delegate" destination="Y2t-3m-3w9" id="fPp-jd-Ina"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tweetHashtagsLabel" destination="myz-R2-Z14" id="sAW-Bg-Whg"/>
+                        <outlet property="tweetImageView" destination="su8-6u-iSM" id="WGl-wt-DOi"/>
+                        <outlet property="tweetLinkLabel" destination="6PE-1j-bdn" id="VhZ-pO-Z4P"/>
+                        <outlet property="tweetTextLabel" destination="FF4-9B-Dxi" id="het-qY-Yvy"/>
+                        <outlet property="tweetUserLabel" destination="MdN-hX-HTe" id="KgZ-a0-ZDT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYK-va-ooJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="265"/>
+            <point key="canvasLocation" x="1835" y="265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wd5-L1-fYW">
