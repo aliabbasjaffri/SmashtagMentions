@@ -40,7 +40,11 @@ class TweetDetailTableViewController: UITableViewController
             }
             
             tweetHashtagsLabel?.text = tags
-            tweetLinkLabel?.text = tweest.urls[0].keyword
+            
+            if !tweest.urls.isEmpty
+            {
+                tweetLinkLabel?.text = tweest.urls[0].keyword
+            }
         }
     }
     
@@ -142,14 +146,22 @@ class TweetDetailTableViewController: UITableViewController
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "imageViewerSegue"
+        {
+            if let tweetImageViewController = segue.destinationViewController.contentViewController as? ImageViewerViewController
+            {
+                tweetImageViewController.imageURL = tweet?.media[0].url
+                tweetImageViewController.title = tweet?.user.name
+            }
+        }
     }
-    */
+    
 
 }
