@@ -15,7 +15,7 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate
     {
         didSet
         {
-            scrollView?.contentSize = imageView.frame.size
+            scrollView?.contentSize = imageView.bounds.size
             scrollView.delegate = self
             scrollView.minimumZoomScale = 0.25
             scrollView.maximumZoomScale = 2.5
@@ -33,12 +33,9 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate
         {
             imageView.image = newValue
             imageView.sizeToFit()
-            scrollView?.contentSize = imageView.frame.size
+            scrollView?.contentSize = imageView.bounds.size
             spinner?.stopAnimating()
         }
-    }
-    @IBAction func backButton(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     var imageURL : NSURL?
@@ -99,16 +96,4 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate
             fetchImage()
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

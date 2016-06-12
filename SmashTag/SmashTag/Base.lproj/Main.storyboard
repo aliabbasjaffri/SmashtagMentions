@@ -216,7 +216,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Section-4" id="4IX-XO-Mqg">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="KUi-FL-lEN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailHashtagsIdentifier" rowHeight="64" id="KUi-FL-lEN">
                                         <rect key="frame" x="0.0" y="520" width="600" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KUi-FL-lEN" id="XTO-Nb-26n">

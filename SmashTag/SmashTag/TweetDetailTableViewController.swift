@@ -18,13 +18,30 @@ class TweetDetailTableViewController: UITableViewController
     @IBOutlet weak var tweetLinkLabel: UILabel!
     
     
+    var tweetData = [[]]
+    
     var tweet : Twitter.Tweet?
+    {
+        didSet
+        {
+            if !tweet!.media.isEmpty
+            {
+                tweetData[0] = tweet!.media
+            }
+            
+            if !tweet!.text.isEmpty
+            {
+                
+            }
+            
+        }
+    }
     
     private func updateUI()
     {
         if let tweest = self.tweet
         {
-            for _ in tweest.media
+            if !tweest.media.isEmpty
             {
                 updateImage(tweest)
             }
@@ -34,7 +51,7 @@ class TweetDetailTableViewController: UITableViewController
             
             var tags : String = ""
     
-            for var hashtag in tweest.hashtags
+            for hashtag in tweest.hashtags
             {
                 tags += hashtag.keyword + " , "
             }
@@ -103,7 +120,7 @@ class TweetDetailTableViewController: UITableViewController
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("detailHashtagsIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
 
