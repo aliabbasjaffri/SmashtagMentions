@@ -17,7 +17,7 @@ class TweetDetailTableViewController: UITableViewController
     @IBOutlet weak var tweetHashtagsLabel: UILabel!
     @IBOutlet weak var tweetLinkLabel: UILabel!
     
-    
+    //need to edit the datastructure!
     var tweetData = [[]]
     
     var tweet : Twitter.Tweet?
